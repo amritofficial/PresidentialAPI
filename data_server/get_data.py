@@ -1,13 +1,15 @@
-from flask import Flask, request
+from flask import Flask, jsonify
+import json
 
 app = Flask(__name__)
 
-@app.route('/data/all', methods=['GET'])
+@app.route('/api/data', methods=['GET'])
 def get_data():
-    if request.args.get('format') == None:
-        return 'Route Works with JSON'
+    file_name = 'data/data.json'
+    file = open(file_name, 'r')
+    json_data = json.load(file)
 
-    return 'route works ' + request.args.get('format')
+    return jsonify(json_data)
 
 if __name__ == '__main__':
     app.run(debug=True)

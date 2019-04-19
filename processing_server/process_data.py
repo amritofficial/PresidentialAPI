@@ -1,9 +1,10 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+@app.route('/data/all')
+def process_data():
     return 'this is a Flask'
 
 if __name__ == '__main__':
