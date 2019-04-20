@@ -5,6 +5,7 @@
     > pip install flask
 * Running the Servers:
     > python request.py
+    
     > python get_data.py
 * Make a GET request to get the csv file:
     > GET http://127.0.0.1:5001/data/all
