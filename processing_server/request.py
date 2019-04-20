@@ -15,12 +15,14 @@ def process_request():
     json_data = jsonify(get_json_data())
     query = request.args.get('format')
 
-    if query == 'csv':
+    # if the selected format is CSV return the customized CSV file as attachment
+    if query == 'csv' or query is None:
        return process_data.create_json_csv(json_data)
-
-    elif query == 'json' or query is None:
+    # if the selected format is JSON then return the customized JSON file
+    elif query == 'json':
        return process_data.create_custom_json(json_data)
 
+# call the API Endpoint to return a JSON response
 def get_json_data():
     try:
         res = requests.get(url)
