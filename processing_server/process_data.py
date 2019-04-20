@@ -1,11 +1,4 @@
-from flask import Flask, request
+class Process_Data():
 
-app = Flask(__name__)
-
-@app.route('/')
-@app.route('/data/all')
-def process_data():
-    return 'this is a Flask'
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    def create_json_csv(self, json_data):
+       print('File Created')
