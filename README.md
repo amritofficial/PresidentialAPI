@@ -3,6 +3,8 @@
 ## Instructions:
 * Install requirements:
     > pip install flask
+    
+    > pip install requests
 * Running the Servers:
     > python request.py
     
